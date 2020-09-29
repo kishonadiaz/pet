@@ -1,0 +1,47 @@
+{
+ 
+  "name":"pets",
+  "version":"0.1",
+  "manifest_version":2,
+  
+  "browser_action":{
+    "default_icon":"assets/apple.png",
+    "default_popup":"popup.html",
+    "script":["js/popup.js"]
+  },
+  "background":{
+    "scripts":["js/background.js"]
+  },
+  "web_accessible_resources":
+  [
+   
+     "/*.png",
+     "/*.gif",
+	 "/*.css"
+  ],
+  "content_scripts":[
+    {
+      "matches":["http://*/*","https://*/*"],
+      "css":["css/workingcss.css"],
+      "js":["js/workingpage.js","js/closingscript.js"]
+    }
+  ],
+  "offline_enabled":true,
+  "permissions":[
+    "activeTab",
+      "tabs",
+      "http://*/*",
+      "https://*/*",
+      "*://*/*",
+      "file://*",
+      "file://*/*",
+      "<all_urls>",
+      "windows",
+      "storage",
+      "file:///app/*/*",
+      "unlimitedStorage"
+
+
+	
+  ]
+}
